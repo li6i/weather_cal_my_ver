@@ -2443,13 +2443,15 @@ const moduleName = module.filename.match(/[^\/]+$/)[0].replace(".js","")
 if (moduleName == Script.name()) {
   await (async () => {
     // Comment out the return to run a test.
-    return
+    // return
     const layout = `
     row
       column
+        current
+        future
     `
     const name = "Weather Cal Widget Builder"
-    await weatherCal.runSetup(name, true, "Weather Cal code", "https://raw.githubusercontent.com/mzeryck/Weather-Cal/main/weather-cal-code.js")
+    await weatherCal.runSetup(name, true, "Weather Cal code", "https://raw.githubusercontent.com/li6i/weather_cal_my_ver/refs/heads/main/weather-cal-code.js")
     const w = await weatherCal.createWidget(layout, name, true)
     w.presentLarge()
     Script.complete()
